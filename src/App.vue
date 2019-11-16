@@ -17,11 +17,32 @@ export default {
 </script>
 
 <style lang="scss">
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-size: 14px;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
 #app {
+  font-size: 1rem;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+
+  padding: 2rem;
 }
 </style>

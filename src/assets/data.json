@@ -1,0 +1,19 @@
+{
+  "articles": [
+    {
+      "id": 1,
+      "title": "Pellentesque lobortis nulla tristique leo imperdiet porttitor. In in tincidunt nunc",
+      "backgroundImage": "office-1920x1281.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce facilisis",
+      "backgroundImage": "startup-1920x1371.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Ut vitae nisl blandit, tincidunt leo non, pretium nisi",
+      "backgroundImage": "write-1920x1135.jpg"
+    }
+  ]
+}
