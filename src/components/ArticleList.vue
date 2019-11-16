@@ -9,16 +9,14 @@
 <script>
 import ArticleItem from '@/components/ArticleItem'
 
-import { articles } from '@/assets/data.json'
-
 export default {
   components: {
     ArticleItem
   },
 
-  data () {
-    return {
-      articles
+  computed: {
+    articles () {
+      return this.$store.state.articles
     }
   }
 }
