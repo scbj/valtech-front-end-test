@@ -1,6 +1,5 @@
 <template>
   <li class="article-item" :style="backgroundImage">
-    <div class="overlay"></div>
     <RouterLink :to="link">
       <span>{{ article.title }}</span>
     </RouterLink>
@@ -28,7 +27,7 @@ export default {
       const { backgroundImage: name } = this.article
       const path = require('@/assets/images/' + name)
       return {
-        '--background-image': `url(${path})`
+        '--background-image': `url('${path}')`
       }
     }
   }
@@ -55,37 +54,29 @@ $border-color: rgba(104, 104, 104, 0.5);
   position: relative;
   height: 100%;
 
+  transition: background-image .2s $easing;
+
   &:first-of-type span {
     margin-right: 18rem;
     text-align: right;
     font-size: 2rem;
   }
-
-  &:hover .overlay {
-    background-color: $overlay-hover-color;
-  }
-}
-
-.overlay {
-  background-color: $overlay-color;
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-
-  transition: all .2s $easing;
 }
 
 a {
+  background-color: $overlay-color;
+
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
   height: 100%;
-  position: relative;
-  z-index: 2;
+
+  transition: background-color .2s $easing;
+
+  &:hover {
+    background-color: $overlay-hover-color;
+  }
 }
 
 span {
