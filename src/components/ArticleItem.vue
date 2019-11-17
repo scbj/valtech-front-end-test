@@ -73,9 +73,13 @@ $border-color: rgba(104, 104, 104, 0.5);
   }
 
   &.hover {
+    &:first-of-type .container {
+      transform: rotateX(-3deg) scale(0.992) translateY(2px);
+    }
+
     .container {
       transition-duration: .16s;
-      transform: rotateX(-4deg) scale(0.99) translateY(4px);
+      transform: rotateX(-11deg) scale(0.992) translateY(4px);
       box-shadow: 0px 2px 4px -1px rgba(rgb(49, 3, 5), 0.7);
     }
 
@@ -96,11 +100,11 @@ a {
   background-image: var(--background-image);
   background-size: cover;
   transform-style: preserve-3d;
-  transform-origin: 50% 0;
+  transform-origin: 50% 10%;
 
   transition: all .3s $easing;
   overflow: hidden;
-  box-shadow: 0px 6px 20px -2px rgba(black, 0.3);
+  box-shadow: 0px 6px 26px -2px rgba(black, 0.3);
 }
 
 a {
