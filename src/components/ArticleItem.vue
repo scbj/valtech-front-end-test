@@ -43,7 +43,7 @@ $overlay-hover-color: rgba(red, 0.5);
 $border-color: rgba(104, 104, 104, 0.5);
 
 .article-item {
-  border: 1px solid $border-color;
+  border-radius: 0.7rem;
   background-image: var(--background-image);
   background-size: cover;
 
@@ -53,8 +53,10 @@ $border-color: rgba(104, 104, 104, 0.5);
   min-width: 22rem;
   position: relative;
   height: 100%;
+  overflow: hidden;
 
   transition: background-image .2s $easing;
+  user-select: none;
 
   &:first-of-type span {
     margin-right: 18rem;

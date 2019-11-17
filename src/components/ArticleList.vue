@@ -28,7 +28,7 @@ export default {
 
   display: grid;
   grid-template-columns: 3fr 1fr;
-  gap: 0.2rem;
+  gap: 0.8rem;
 
   li:first-of-type {
     grid-row: auto / span 2;

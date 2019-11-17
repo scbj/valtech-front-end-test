@@ -8,6 +8,8 @@
 <style scoped lang="scss">
 .navigation-list {
   padding: 30px;
+
+  user-select: none;
 }
 
 a {
