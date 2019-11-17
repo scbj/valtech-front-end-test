@@ -1,8 +1,15 @@
 <template>
-  <li class="article-item" :style="backgroundImage">
-    <RouterLink :to="link">
-      <span>{{ article.title }}</span>
-    </RouterLink>
+  <li
+    class="article-item"
+    :class="{ hover: mouseOver }"
+    :style="backgroundImage"
+    @mouseenter="mouseOver = true"
+    @mouseleave="mouseOver = false">
+    <div class="container">
+      <RouterLink :to="link">
+        <span>{{ article.title }}</span>
+      </RouterLink>
+    </div>
   </li>
 </template>
 
@@ -12,6 +19,12 @@ export default {
     article: {
       type: Object,
       required: true
+    }
+  },
+
+  data () {
+    return {
+      mouseOver: false
     }
   },
 
@@ -43,19 +56,14 @@ $overlay-hover-color: rgba(red, 0.5);
 $border-color: rgba(104, 104, 104, 0.5);
 
 .article-item {
-  border-radius: 0.7rem;
-  background-image: var(--background-image);
-  background-size: cover;
-
   color: white;
 
   min-height: 10rem;
   min-width: 22rem;
   position: relative;
   height: 100%;
-  overflow: hidden;
+  perspective: 1000px;
 
-  transition: background-image .2s $easing;
   user-select: none;
 
   &:first-of-type span {
@@ -63,6 +71,36 @@ $border-color: rgba(104, 104, 104, 0.5);
     text-align: right;
     font-size: 2rem;
   }
+
+  &.hover {
+    .container {
+      transition-duration: .16s;
+      transform: rotateX(-4deg) scale(0.99) translateY(4px);
+      box-shadow: 0px 2px 4px -1px rgba(rgb(49, 3, 5), 0.7);
+    }
+
+    a {
+      background-color: $overlay-hover-color;
+    }
+  }
+}
+
+.container,
+a {
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  border-radius: 0.7rem;
+  background-image: var(--background-image);
+  background-size: cover;
+  transform-style: preserve-3d;
+  transform-origin: 50% 0;
+
+  transition: all .3s $easing;
+  overflow: hidden;
+  box-shadow: 0px 6px 20px -2px rgba(black, 0.3);
 }
 
 a {
@@ -71,14 +109,8 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  height: 100%;
 
   transition: background-color .2s $easing;
-
-  &:hover {
-    background-color: $overlay-hover-color;
-  }
 }
 
 span {
