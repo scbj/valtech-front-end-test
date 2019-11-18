@@ -48,7 +48,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import '../assets/styles/_vars';
+@import '../assets/styles/vars';
+@import '../assets/styles/mixins';
 
 .article-item {
   color: white;
@@ -62,9 +63,14 @@ export default {
   user-select: none;
 
   &:first-of-type span {
-    margin-right: 18rem;
-    text-align: right;
-    font-size: 2rem;
+    @include mq (medium) {
+      font-size: 2rem;
+    }
+
+    @include mq (extraLarge) {
+      margin-right: 18rem;
+      text-align: right;
+    }
   }
 
   &.hover {

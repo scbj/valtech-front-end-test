@@ -26,8 +26,8 @@
   text-align: left;
 
   max-width: 40rem;
-  padding: 1rem;
   margin: auto;
+  margin-bottom: 4rem;
 }
 
 h3 {

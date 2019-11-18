@@ -43,7 +43,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import '../assets/styles/_vars';
+@import '../assets/styles/vars';
+@import '../assets/styles/mixins';
 
 .modal {
   background: $modal-overlay-color;
@@ -69,13 +70,19 @@ export default {
   background-size: cover;
   border-radius: 0.7rem;
 
-  width: 40rem;
-  max-height: 90vh;
+  width: 100%;
+  height: 100%;
   position: relative;
 
   box-shadow: $modal-box-shadow;
   cursor: auto;
   overflow-y: auto;
+
+  @include mq (medium) {
+    width: 40rem;
+    max-height: 90vh;
+    height: auto;
+  }
 }
 
 button {
@@ -87,9 +94,15 @@ button {
 
   width: 2rem;
   height: 2rem;
-  position: absolute;
-  top: 2rem;
-  right: 2rem;
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+
+  @include mq (medium) {
+    top: 2rem;
+    right: 2rem;
+    position: absolute;
+  }
 
   cursor: pointer;
 

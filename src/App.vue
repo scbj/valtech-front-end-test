@@ -18,6 +18,7 @@ export default {
 
 <style lang="scss">
 @import './assets/styles/vars';
+@import './assets/styles/mixins';
 
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab:400,900&display=swap');
 
@@ -47,6 +48,11 @@ a:visited {
   text-align: center;
   color: $text-color;
 
-  padding: 2rem;
+  $paddings: (
+    default: 1rem,
+    medium: 2rem,
+    large: 3rem
+  );
+  @include responsive (padding, $paddings);
 }
 </style>

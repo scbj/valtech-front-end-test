@@ -29,19 +29,25 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import '../assets/styles/_vars';
+@import '../assets/styles/vars';
+@import '../assets/styles/mixins';
 
 .article-details {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 
-  padding: 3rem;
   margin: 2rem;
+  margin-top: 4rem;
+
+  @include mq (medium) {
+    padding: 3rem;
+    margin-top: 2rem;
+  }
 }
 
 h2 {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 400;
   letter-spacing: 0.05em;
   line-height: 3rem;
@@ -50,7 +56,15 @@ h2 {
   max-width: 16em;
 
   &::first-letter {
-    font-size: 4.4rem;
+    font-size: 3.4rem;
+  }
+
+  @include mq (medium) {
+    font-size: 1.8rem;
+
+    &::first-letter {
+      font-size: 4.4rem;
+    }
   }
 }
 
