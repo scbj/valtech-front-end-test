@@ -2,9 +2,7 @@
   <transition name="fade" appear>
     <div class="modal" @click.self="close">
       <div class="container">
-        <h2>{{ article.title }}</h2>
-        <p>by <a :href="article.sourceUrl" target="_blank">Jason Zigrino</a></p>
-        <img :src="imageSource" alt="Article cover">
+        <ArticleDetails v-if="article" :article="article" />
         <button @click="close"></button>
       </div>
     </div>
@@ -12,6 +10,8 @@
 </template>
 
 <script>
+import ArticleDetails from '@/components/ArticleDetails'
+
 export default {
   name: 'modal',
 
@@ -22,23 +22,14 @@ export default {
     }
   },
 
-  data () {
-    return {
-      article: {}
-    }
+  components: {
+    ArticleDetails
   },
 
   computed: {
-    imageSource () {
-      if (!this.article.backgroundImage) {
-        return ''
-      }
-      return require('@/assets/images/' + this.article.backgroundImage)
+    article () {
+      return this.$store.state.articles.find(x => x.id.toString() === this.id)
     }
-  },
-
-  mounted () {
-    this.article = this.$store.state.articles.find(x => x.id.toString() === this.id)
   },
 
   methods: {
@@ -58,6 +49,7 @@ $easing: cubic-bezier(.165, .84, .44, 1);
   display: flex;
   align-items: center;
   justify-content: center;
+
   position: fixed;
   z-index: 1000;
   top: 0;
@@ -75,65 +67,13 @@ $easing: cubic-bezier(.165, .84, .44, 1);
   background-size: cover;
   border-radius: 0.7rem;
 
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 3rem;
-  margin: 2rem;
   width: 40rem;
-  height: 100%;
-  max-height: 80vh;
+  max-height: 90vh;
   position: relative;
 
   box-shadow: 0px 6px 40px -2px rgba(black, 0.2);
   cursor: auto;
   overflow-y: auto;
-}
-
-h2 {
-  font-size: 1.8rem;
-  font-weight: 400;
-  letter-spacing: 0.05em;
-  line-height: 3rem;
-  text-align: left;
-
-  max-width: 16em;
-
-    text-shadow: 4px 4px 10px 0px red;
-  &::first-letter {
-    font-size: 4.4rem;
-  }
-}
-
-p {
-  margin-top: 1em;
-}
-
-a {
-  color: #d40000;
-
-  position: relative;
-
-  &::before {
-    content: "";
-    background: rgba(212, 0, 0, 0.04);
-    width: 90%;
-    height: 17.4em;
-    position: absolute;
-    bottom: -0.7em;
-    right: -0.9em;
-  }
-}
-
-img {
-  border-radius: 0.3rem;
-
-  margin-top: 4rem;
-  width: 100%;
-  height: 16rem;
-
-  object-fit: cover;
-  box-shadow: 0px 22px 16px -12px rgba(0, 0, 0, 0.2);
 }
 
 button {
@@ -174,7 +114,7 @@ button {
 
   &:hover::before {
     opacity: 1;
-    transition-delay: .6s;
+    transition-delay: .5s;
   }
 }
 
