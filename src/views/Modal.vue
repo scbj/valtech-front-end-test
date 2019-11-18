@@ -10,6 +10,8 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 import ArticleDetails from '@/components/ArticleDetails'
 
 export default {
@@ -22,14 +24,14 @@ export default {
     }
   },
 
-  components: {
-    ArticleDetails
+  computed: {
+    ...mapState({
+      article: 'selected'
+    })
   },
 
-  computed: {
-    article () {
-      return this.$store.state.articles.find(x => x.id.toString() === this.id)
-    }
+  components: {
+    ArticleDetails
   },
 
   methods: {

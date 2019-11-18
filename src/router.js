@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
+
+import Home from '@/views/Home.vue'
+import store from '@/store'
 
 Vue.use(Router)
 
@@ -17,7 +19,14 @@ export default new Router({
           path: 'article/:id',
           name: 'modal',
           component: () => import('@/views/Modal.vue'),
-          props: true
+          props: true,
+          beforeEnter: (to, from, next) => {
+            console.log('TCL: to', to)
+            console.log('⚡')
+            const { id } = to.params
+            store.dispatch('setSelectedFromId', id)
+            next()
+          }
         }
       ]
     },

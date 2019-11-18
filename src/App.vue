@@ -9,15 +9,9 @@
 // @ is an alias to /src
 import NavigationList from '@/components/NavigationList.vue'
 
-import { articles } from '@/assets/data.json'
-
 export default {
   components: {
     NavigationList
-  },
-
-  created () {
-    this.$store.commit('setArticles', articles)
   }
 }
 </script>
