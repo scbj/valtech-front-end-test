@@ -122,17 +122,17 @@ button {
   transition: background .4s $easing;
 
   .container {
-    transition: all .3s $easing .1s;
+    transition: all .3s $easing .15s;
   }
 }
 
 .fade-leave-active {
-  transition: background .2s $easing;
+  transition: background .3s $easing;
 
   .container {
     transition:
-      opacity .15s $easing,
-      transform .2s $easing;
+      opacity .2s $easing,
+      transform .3s $easing;
   }
 }
 

@@ -1,9 +1,11 @@
 <template>
-  <div class="article-details">
-    <h2>{{ article.title }}</h2>
-    <p>by <a :href="article.sourceUrl" target="_blank">Jason Zigrino</a></p>
-    <img :src="imageSource" alt="Article cover">
-  </div>
+  <transition name="load" appear>
+    <div class="article-details">
+      <h2>{{ article.title }}</h2>
+      <p>by <a :href="article.sourceUrl" target="_blank">Jason Zigrino</a></p>
+      <img :src="imageSource" alt="Article cover">
+    </div>
+  </transition>
 </template>
 
 <script>
@@ -60,13 +62,16 @@ a {
   position: relative;
 
   &::before {
-    content: "";
     background: rgba(212, 0, 0, 0.04);
+
     width: 90%;
     height: 22em;
     position: absolute;
     bottom: -0.7em;
     right: -0.9em;
+
+    transform-origin: 50% 100%;
+    content: "";
   }
 }
 
@@ -79,5 +84,38 @@ img {
 
   object-fit: cover;
   box-shadow: 0px 22px 16px -12px rgba(0, 0, 0, 0.2);
+}
+
+$easing: cubic-bezier(.09,.8,.24,.92);
+
+.load-enter-active {
+  transition: all 1s $easing 0.4s;
+  h2,
+  p,
+  a::before,
+  img {
+    transition: all 1s $easing 0.4s;
+  }
+
+  p { transition-delay: 1s; }
+  a::before { transition-delay: 1s; transition-timing-function: cubic-bezier(.27,.58,.5,.77) }
+  img { transition-delay: 0.8s; }
+}
+
+.load-enter {
+  opacity: 0.4;
+  h2,
+  p {
+    opacity: 0;
+    transform: translateX(-3rem);
+  }
+
+  a::before {
+    transform: scaleY(0);
+  }
+
+  img {
+    opacity: 0;
+  }
 }
 </style>
