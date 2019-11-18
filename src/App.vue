@@ -23,6 +23,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:400,900&display=swap');
+
 *,
 *::before,
 *::after {
@@ -43,7 +45,7 @@ a:visited {
 
 #app {
   font-size: 1rem;
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'Roboto Slab', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

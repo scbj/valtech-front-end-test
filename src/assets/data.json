@@ -3,17 +3,20 @@
     {
       "id": 1,
       "title": "Pellentesque lobortis nulla tristique leo imperdiet porttitor. In in tincidunt nunc",
-      "backgroundImage": "office-1920x1281.jpg"
+      "backgroundImage": "trypogen-2-sss.jpg",
+      "sourceUrl": "https://dribbble.com/shots/4231722-SSS-Virus"
     },
     {
       "id": 2,
       "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce facilisis",
-      "backgroundImage": "startup-1920x1371.jpg"
+      "backgroundImage": "trypogen-sss-cube.jpg",
+      "sourceUrl": "https://dribbble.com/shots/4204162-SSS-What-s-in-the-Box"
     },
     {
       "id": 3,
       "title": "Ut vitae nisl blandit, tincidunt leo non, pretium nisi",
-      "backgroundImage": "write-1920x1135.jpg"
+      "backgroundImage": "sss-falling-light.jpg",
+      "sourceUrl": "https://dribbble.com/shots/4175490-SSS-Falling-Lights"
     }
   ]
 }

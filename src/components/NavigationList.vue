@@ -14,10 +14,10 @@
 
 a {
   font-weight: bold;
-  color: #2c3e50;
+  color: #804949;
 
   &.router-link-exact-active {
-    color: #42b983;
+    color: #d40000;
   }
 }
 </style>

@@ -119,8 +119,7 @@ a {
 
 span {
   font-size: 1.1rem;
-  font-family: "Franklin Gothic";
-  font-weight: 400;
+  font-weight: 900;
   letter-spacing: 0.04em;
 
   margin: 2rem;
