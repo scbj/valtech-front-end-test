@@ -6,6 +6,8 @@
 </template>
 
 <style scoped lang="scss">
+@import '../assets/styles/_vars';
+
 .navigation-list {
   padding: 30px;
 
@@ -14,10 +16,10 @@
 
 a {
   font-weight: bold;
-  color: #804949;
+  /* color: #804949; */
 
   &.router-link-exact-active {
-    color: #d40000;
+    color: $highlight-color;
   }
 }
 </style>

@@ -20,6 +20,8 @@
 </template>
 
 <style scoped lang="scss">
+@import '../assets/styles/_vars';
+
 .about {
   text-align: left;
 
@@ -40,6 +42,6 @@ p {
 }
 
 a {
-  color: #d40000;
+  color: $highlight-color;
 }
 </style>

@@ -48,12 +48,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-$easing: cubic-bezier(.165, .84, .44, 1);
-
-$overlay-color: rgba(black, 0.3);
-$overlay-hover-color: rgba(red, 0.5);
-
-$border-color: rgba(104, 104, 104, 0.5);
+@import '../assets/styles/_vars';
 
 .article-item {
   color: white;
@@ -80,11 +75,11 @@ $border-color: rgba(104, 104, 104, 0.5);
     .container {
       transition-duration: .16s;
       transform: rotateX(-11deg) scale(0.992) translateY(4px);
-      box-shadow: 0px 2px 4px -1px rgba(rgb(49, 3, 5), 0.7);
+      box-shadow: $article-hover-box-shadow;
     }
 
     a {
-      background-color: $overlay-hover-color;
+      background-color: $article-hover-background-color;
     }
   }
 }
@@ -102,19 +97,19 @@ a {
   transform-style: preserve-3d;
   transform-origin: 50% 10%;
 
-  transition: all .3s $easing;
+  transition: all .3s $easing-1;
   overflow: hidden;
-  box-shadow: 0px 6px 26px -2px rgba(black, 0.3);
+  box-shadow: $article-box-shadow;
 }
 
 a {
-  background-color: $overlay-color;
+  background-color: $article-background-color;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  transition: background-color .2s $easing;
+  transition: background-color .2s $easing-1;
 }
 
 span {

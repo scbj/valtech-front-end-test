@@ -41,10 +41,10 @@ export default {
 </script>
 
 <style scoped lang="scss">
-$easing: cubic-bezier(.165, .84, .44, 1);
+@import '../assets/styles/_vars';
 
 .modal {
-  background: rgba(white, 0.9);
+  background: $modal-overlay-color;
 
   display: flex;
   align-items: center;
@@ -61,7 +61,7 @@ $easing: cubic-bezier(.165, .84, .44, 1);
 }
 
 .container {
-  background-color: white;
+  background-color: $modal-background-color;
   background-image: var(--background-image);
   background-repeat: no-repeat;
   background-size: cover;
@@ -71,7 +71,7 @@ $easing: cubic-bezier(.165, .84, .44, 1);
   max-height: 90vh;
   position: relative;
 
-  box-shadow: 0px 6px 40px -2px rgba(black, 0.2);
+  box-shadow: $modal-box-shadow;
   cursor: auto;
   overflow-y: auto;
 }
@@ -119,20 +119,20 @@ button {
 }
 
 .fade-enter-active {
-  transition: background .4s $easing;
+  transition: background .4s $easing-1;
 
   .container {
-    transition: all .3s $easing .15s;
+    transition: all .3s $easing-1 .15s;
   }
 }
 
 .fade-leave-active {
-  transition: background .3s $easing;
+  transition: background .3s $easing-1;
 
   .container {
     transition:
-      opacity .2s $easing,
-      transform .3s $easing;
+      opacity .2s $easing-1,
+      transform .3s $easing-1;
   }
 }
 

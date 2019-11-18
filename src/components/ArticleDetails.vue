@@ -29,6 +29,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import '../assets/styles/_vars';
+
 .article-details {
   display: flex;
   flex-direction: column;
@@ -57,12 +59,12 @@ p {
 }
 
 a {
-  color: #d40000;
+  color: $highlight-color;
 
   position: relative;
 
   &::before {
-    background: rgba(212, 0, 0, 0.04);
+    background: $highlight-background-color;
 
     width: 90%;
     height: 22em;
@@ -86,15 +88,13 @@ img {
   box-shadow: 0px 22px 16px -12px rgba(0, 0, 0, 0.2);
 }
 
-$easing: cubic-bezier(.09,.8,.24,.92);
-
 .load-enter-active {
-  transition: all 1s $easing 0.4s;
+  transition: all 1s $easing-2 0.4s;
   h2,
   p,
   a::before,
   img {
-    transition: all 1s $easing 0.4s;
+    transition: all 1s $easing-2 0.4s;
   }
 
   p { transition-delay: 1s; }
