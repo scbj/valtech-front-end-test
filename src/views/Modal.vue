@@ -139,7 +139,7 @@ img {
 button {
   border: none;
   background-color: transparent;
-  background-image: url('../assets/images/chevron-down.svg');
+  background-image: url('../assets/images/arrow-left.svg');
   background-repeat: no-repeat;
   background-size: cover;
 
@@ -149,11 +149,32 @@ button {
   top: 2rem;
   right: 2rem;
 
+  cursor: pointer;
+
   &:active,
   &:focus,
   &:hover {
     -webkit-appearance: none;
     outline: none;
+  }
+
+  &::before {
+    font-family: 'Roboto Slab', serif;
+    font-size: 0.7rem;
+
+    content: 'GO BACK';
+    position: absolute;
+    left: 0;
+    top: 50%;
+
+    opacity: 0;
+    transform: translateY(-50%) translateX(calc(-100% - 1rem));
+    transition: all .1s ease-out;
+  }
+
+  &:hover::before {
+    opacity: 1;
+    transition-delay: .6s;
   }
 }
 
